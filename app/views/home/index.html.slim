@@ -5,3 +5,18 @@
 - else
   h1 class="text-center" My tasks
   = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+
+  div class="container my-5"
+    div id="tasks"
+    <ul>
+      div
+        - @tasks.each do |task|
+          = render 'home/list', task: task
+      div id="new-task"
+    </ul>
+    div class="row"
+      div class="col-md-1"
+      div class="col-md-8"
+        input type="text" class="form-control" id="InputTask"
+      div class="col-md-3"
+        = link_to 'Add task', tasks_path, method: :post, class: 'btn btn-secondary', id: 'AddButton', remote: true

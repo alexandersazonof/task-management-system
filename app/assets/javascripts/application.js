@@ -14,6 +14,20 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
+//= require jquery
+//= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+$(document).ready(function() {
+  $("#AddButton").click(function(){
+    var taskName = $('#InputTask').val()
+    $.ajax({
+      type: "post",
+      url: "/tasks",
+      data: { name: taskName }
+    })
+  });
+});

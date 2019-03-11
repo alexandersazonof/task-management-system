@@ -36,6 +36,7 @@ gem 'pg'
 gem 'dotenv-rails'
 gem 'slim-rails'
 gem 'slim'
+gem 'pry'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
