@@ -29,7 +29,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'devise'
+gem 'pg'
+gem 'dotenv-rails'
+gem 'slim-rails'
+gem 'slim'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
