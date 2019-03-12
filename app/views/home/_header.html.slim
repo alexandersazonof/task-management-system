@@ -1,0 +1,7 @@
+nav class="navbar navbar-light bg-light"
+  = link_to 'Task management system', root_path, class: 'navbar-brand'
+  div.form-inline
+    - if user_signed_in?
+      = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger'
+    - else
+      = link_to 'Sign in', new_user_session_path, class: 'btn btn-primary'

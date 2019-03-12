@@ -13,4 +13,42 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery3
+//= require jquery
+//= require jquery_ujs
+//= require popper
+//= require bootstrap-sprockets
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 //= require_tree .
+
+
+$(document).ready(function() {
+  $("#AddButton").click(function(){
+    var taskName = $('#InputTask').val()
+    $.ajax({
+      type: "post",
+      url: "/tasks",
+      data: { name: taskName }
+    })
+  });
+
+  
+
+  $(function() {
+    $('.sortable').railsSortable();
+  });
+});
+
+$(document).on("change", "input:checkbox", function () {
+  var id = $(this).attr('id').split('-')[2];
+  if (this.checked) {
+    $.ajax({
+      url: "/tasks/"+id,
+      type: 'PATCH',
+      data: { id: id }
+    })
+  } else {
+    alert('Incorrect query');
+  }
+});

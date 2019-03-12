@@ -1,0 +1,15 @@
+- if !user_signed_in?
+  h1 class="text-center" Some content
+- else
+  h1 class="text-center" My tasks
+  div class="container my-5"
+    ul.sortable
+      - @tasks.each_with_sortable_id do |task, sortable_id|
+        = render 'home/list', task: task, sortable_id: sortable_id
+
+    div class="row my-5"
+      div.col-md-1
+      div class="col-md-9"
+        input type="text" class="form-control" id="InputTask"
+      div class="col-md-2"
+        = link_to 'Add task', tasks_path, method: :post, class: 'btn btn-secondary', id: 'AddButton', remote: true
