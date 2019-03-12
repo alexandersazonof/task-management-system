@@ -30,4 +30,17 @@ $(document).ready(function() {
       data: { name: taskName }
     })
   });
+
+  $("input:checkbox").change(function(){
+    var id = $(this).attr('id').split('-')[2];
+    if (this.checked) {
+      $.ajax({
+        url: "/tasks/"+id,
+        type: 'PATCH',
+        data: { id: id }
+      })
+    } else {
+      alert('Incorrect query');
+    }
+  })
 });

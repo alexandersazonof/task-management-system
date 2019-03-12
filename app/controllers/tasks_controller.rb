@@ -6,16 +6,22 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.js
-        format.json {render json: @task, layout: false}
+        format.json {render json: @task, layout: false }
       else
         render root_path
       end
     end
   end
 
-
-  private
-  def task_params
-    params.permit(:name)
+  def update
+    @task = Task.find(params[:id])
+    respond_to do |format|
+      if (@task.update(state: true))
+        format.js
+        format.json { render json: @task, layout: false }
+      end
+    end
   end
+
+
 end
