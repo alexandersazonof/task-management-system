@@ -1,8 +1,10 @@
-li class="list-group-item d-flex justify-content-between align-items-center my-1 list-group-item-dark" id="task-id-#{task.id}"
-  - if task.state
-    s
-      = task.name
-    input type="checkbox" class='pull-right' id="field-id-#{task.id}" disabled="disabled" checked="checked"
-  - else
+|  <li class='list-group-item d-flex justify-content-between align-items-center my-1 list-group-item-dark' id="
+= sortable_id
+| ">
+- if task.state
+  s
     = task.name
-    input type="checkbox" class='pull-right' id="field-id-#{task.id}"
+  input type="checkbox" class='pull-right' id="field-id-#{task.id}" disabled="disabled" checked="checked"
+- else
+  = task.name
+  input type="checkbox" class='pull-right' id="field-id-#{task.id}"

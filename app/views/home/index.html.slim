@@ -8,12 +8,10 @@
 
   div class="container my-5"
     div id="tasks"
-    <ul class="list-group">
-      div
-        - @tasks.each do |task|
-          = render 'home/list', task: task
+    ul.sortable
+      - @tasks.each_with_sortable_id do |task, sortable_id|
+        = render 'home/list', task: task, sortable_id: sortable_id
       div id="new-task"
-    </ul>
     div class="row my-5"
       div class="col-md-10"
         input type="text" class="form-control" id="InputTask"

@@ -1,1 +1,1 @@
-| $("#task-id-#{@task.id}").replaceWith("#{ j(render 'home/list', task: @task)} ");
+| $("#{@task.sort}").replaceWith("#{ j(render 'home/list', task: @task, sortable_id: @task.sort)} ");
