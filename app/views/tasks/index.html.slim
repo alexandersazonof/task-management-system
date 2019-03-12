@@ -1,7 +1,10 @@
-ul.sortable
-  - @tasks.each_with_sortable_id do |task, sortable_id|
-    |  <li id="
-    = sortable_id
-    | ">
-    = task.name
-    = task.sort
+table
+  tbody.sortable
+    - @tasks.each_with_sortable_id do |item, sortable_id|
+      |  <tr id="
+      = sortable_id
+      | "> 
+      td
+        = item.name
+      td
+        = item.sort
