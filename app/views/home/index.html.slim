@@ -1,19 +1,15 @@
 - if !user_signed_in?
   h1 class="text-center" Some content
-  = link_to 'Sign in', new_user_session_path, class: 'btn btn-primary'
-  = link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary'
 - else
   h1 class="text-center" My tasks
-  = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
-
   div class="container my-5"
-    div id="tasks"
     ul.sortable
       - @tasks.each_with_sortable_id do |task, sortable_id|
         = render 'home/list', task: task, sortable_id: sortable_id
-      div id="new-task"
+
     div class="row my-5"
-      div class="col-md-10"
+      div.col-md-1
+      div class="col-md-9"
         input type="text" class="form-control" id="InputTask"
       div class="col-md-2"
         = link_to 'Add task', tasks_path, method: :post, class: 'btn btn-secondary', id: 'AddButton', remote: true

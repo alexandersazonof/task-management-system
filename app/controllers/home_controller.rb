@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @tasks = current_user.tasks.order(:sort)
+    if user_signed_in?
+      @tasks = current_user.tasks.order(:sort)
+    end
   end
 end
