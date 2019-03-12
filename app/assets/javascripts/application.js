@@ -18,6 +18,8 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 //= require_tree .
 
 
@@ -42,5 +44,9 @@ $(document).ready(function() {
     } else {
       alert('Incorrect query');
     }
-  })
+  });
+
+  $(function() {
+    $('.sortable').railsSortable();
+  });
 });

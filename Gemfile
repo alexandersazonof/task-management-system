@@ -37,6 +37,8 @@ gem 'dotenv-rails'
 gem 'slim-rails'
 gem 'slim'
 gem 'pry'
+gem 'jquery-ui-rails'
+gem 'rails_sortable'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
